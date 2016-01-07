@@ -17,4 +17,4 @@ var Gimmea = {
 };
 
 
-export default Gimmea;
+module.exports = Gimmea;
