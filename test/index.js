@@ -1,6 +1,6 @@
 import Should from 'should';
 
-import Gimmea from '../src';
+import Gimmea from '../lib';
 
 
 describe('Gimmea', () => {

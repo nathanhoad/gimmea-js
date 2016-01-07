@@ -1,12 +1,12 @@
 {
   "name": "gimmea",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A set of quick value generation tools",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test/index.js --compilers js:babel-register",
+    "test": "npm run compile && mocha test/index.js --compilers js:babel-register",
     "compile": "babel -d lib/ src/",
-    "prepublish": "npm test && npm run compile"
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
