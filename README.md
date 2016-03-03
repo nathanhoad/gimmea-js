@@ -25,3 +25,13 @@ Slugifies a string:
 ```javascript
 Gimmea.slug('This is the Title!'); // gives 'this-is-the-title'
 ```
+
+
+### Grid
+
+Generates a grid:
+
+```javascript
+Gimmea.grid(10); // generates a 10x10 grid with values of null
+Gimmea.grid(10, 15, false); // generates a 10x15 grid with values of false
+```

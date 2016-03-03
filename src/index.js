@@ -1,17 +1,33 @@
-import Crypto from 'crypto';
+const Crypto = require('crypto');
 
 
-var Gimmea = {
+const Gimmea = {
     
-    hash: function (seed, length) {
+    hash (seed, length) {
         length = length || 64;
         
         return Crypto.createHash("sha256").update(seed.toString(), "utf8").digest("hex").substring(0, length);
     },
     
     
-    slug: function (string) {
+    slug (string) {
         return string.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/\-+/g, '-').replace(/(^\-|\-$)/, '');
+    },
+    
+    
+    grid (width, height, default_value) {
+        if (!height) height = width;
+        if (typeof default_value === "undefined") default_value = null;
+        
+        let grid = [];
+        for (let x = 0; x < width; x ++) {
+            grid[x] = [];
+            for (let y = 0; y < height; y ++) {
+                grid[x][y] = default_value;
+            }
+        }
+        
+        return grid;
     }
 
 };

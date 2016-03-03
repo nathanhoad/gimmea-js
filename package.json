@@ -1,6 +1,6 @@
 {
   "name": "gimmea",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A set of quick value generation tools",
   "main": "lib/index.js",
   "scripts": {

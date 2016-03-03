@@ -1,6 +1,6 @@
-import Should from 'should';
+const Should = require('should');
 
-import Gimmea from '../lib';
+const Gimmea = require('../lib');
 
 
 describe('Gimmea', () => {
@@ -23,11 +23,28 @@ describe('Gimmea', () => {
     
     describe('#slug', () => {
         it('slugifies a string', (done) => {
-            var slug = Gimmea.slug('This is the Title!');
+            let slug = Gimmea.slug('This is the Title!');
             
             slug.should.eql('this-is-the-title');
             
             done();
         });
-    })
+    });
+    
+    
+    describe("#grid", () => {
+        it('generates a grid', (done) => {
+            let grid = Gimmea.grid(10);
+            
+            grid.length.should.eql(10);
+            Should(grid[0][0]).eql(null);
+            
+            grid = Gimmea.grid(10, 15, false);
+            grid.length.should.eql(10);
+            grid[0].length.should.eql(15);
+            grid[0][0].should.eql(false);
+            
+            done();
+        });
+    });
 })
