@@ -28,6 +28,21 @@ const Gimmea = {
         }
         
         return grid;
+    },
+    
+    
+    weightedRandomValue (array, weightProperty) {
+        if (!weightProperty) weightProperty = 'weight';
+    
+        var weightedArray = [];
+        
+        array.forEach((item) => {
+            for (let i = 0; i < parseInt(item[weightProperty], 10); i++) {
+                weightedArray.push(item);
+            }
+        });
+        
+        return weightedArray[Math.floor(Math.random() * weightedArray.length)];
     }
 
 };

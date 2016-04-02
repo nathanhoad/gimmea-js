@@ -35,3 +35,35 @@ Generates a grid:
 Gimmea.grid(10); // generates a 10x10 grid with values of null
 Gimmea.grid(10, 15, false); // generates a 10x15 grid with values of false
 ```
+
+
+### Weighted Random Value
+
+Given an array of objects (each with an integer weight property), return one
+of the objects:
+
+```javascript
+let loadedCoin = [
+    {
+        name: 'heads',
+        weight: 1
+    },
+    {
+        name: 'tails',
+        weight: 0
+    }
+];
+Gimmea.weightedRandomValue(loadedCoin); // Always { name: 'heads', weight: 1 }
+
+let lottery = [
+    {
+        name: 'Nathan',
+        tickets: 10
+    },
+    {
+        name: 'Lilly',
+        tickets: 1
+    }
+];
+Gimmea.weightedRandomValue(lottery, 'tickets'); // Nathan has 10 times the chances to win
+```

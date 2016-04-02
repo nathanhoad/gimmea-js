@@ -47,4 +47,41 @@ describe('Gimmea', () => {
             done();
         });
     });
+    
+    
+    describe("weightedRandomValue", () => {
+        it('picks a weighted random value', (done) => {
+            let loadedCoin = [
+                {
+                    name: 'heads',
+                    weight: 1
+                },
+                {
+                    name: 'tails',
+                    weight: 0
+                }
+            ];
+            let result = Gimmea.weightedRandomValue(loadedCoin);
+            result.name.should.equal('heads');
+            
+            let results = { heads: 0, tails: 0 };
+            let fairCoin = [
+                {
+                    name: 'heads',
+                    chance: 1
+                },
+                {
+                    name: 'tails',
+                    chance: 1
+                }
+            ];
+            for (let i = 0; i < 100; i++) {
+                results[Gimmea.weightedRandomValue(fairCoin, 'chance').name]++;
+            }
+            results.heads.should.be.above(40);
+            results.tails.should.be.above(40);
+            
+            done();
+        });
+    });
 })
