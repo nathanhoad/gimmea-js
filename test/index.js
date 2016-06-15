@@ -29,6 +29,15 @@ describe('Gimmea', () => {
             
             done();
         });
+        
+        it('can include a random hash', (done) => {
+            let slug = Gimmea.slug('Thing', 10);
+            
+            slug.should.containEql('thing-');
+            slug.length.should.eql(16);
+            
+            done();
+        });
     });
     
     

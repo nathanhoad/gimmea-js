@@ -24,6 +24,7 @@ Slugifies a string:
 
 ```javascript
 Gimmea.slug('This is the Title!'); // gives 'this-is-the-title'
+Gimmea.slug('Thing', 10); // gives something like 'thing-0e94c54d8d'
 ```
 
 
