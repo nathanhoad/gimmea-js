@@ -1,7 +1,13 @@
 const Crypto = require('crypto');
+const UUID = require('node-uuid');
 
 
 const Gimmea = {
+    
+    uuid () {
+        return UUID.v4();
+    },
+    
     
     hash (seed, length) {
         length = length || 64;

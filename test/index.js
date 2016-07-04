@@ -1,9 +1,21 @@
 const Should = require('should');
+const Validator = require('validator');
 
 const Gimmea = require('../lib');
 
 
 describe('Gimmea', () => {
+    describe('#uuid', () => {
+        it('generates a valid UUID', (done) => {
+            let id = Gimmea.uuid();
+            
+            Validator.isUUID(id).should.be.true();
+            
+            done();
+        });
+    });
+    
+    
     describe('#hash', () => {
         it('generates a hash from a seed string', (done) => {
             let first_hash = Gimmea.hash('test input');

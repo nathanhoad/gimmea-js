@@ -8,6 +8,15 @@ A set of quick value generation tools.
 `npm install gimmea`
 
 
+### UUID
+
+Generate a UUID:
+
+```javascript
+Gimmea.uuid(); // gives something like e61c58d4-68fd-440e-a525-18e4112c7020
+```
+
+
 ### Hash
 
 Generate a hash:
