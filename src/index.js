@@ -19,7 +19,7 @@ const Gimmea = {
     slug (string, hash_size) {
         hash_size = hash_size || 0;
         
-        var slug = string.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/\-+/g, '-').replace(/(^\-|\-$)/, '');
+        var slug = string.toLowerCase().replace(/[\'\!\"\&\%]/g, '').replace(/[^a-z0-9]/g, '-').replace(/\-+/g, '-').replace(/(^\-|\-$)/, '');
         if (hash_size > 0) {
             slug += '-' + Gimmea.hash(Math.random().toString(), hash_size);
         }

@@ -36,11 +36,14 @@ describe('Gimmea', () => {
     describe('#slug', () => {
         it('slugifies a string', (done) => {
             let slug = Gimmea.slug('This is the Title!');
-            
             slug.should.eql('this-is-the-title');
+            
+            slug = Gimmea.slug("This title is 100% Someone's");
+            slug.should.eql('this-title-is-100-someones');
             
             done();
         });
+        
         
         it('can include a random hash', (done) => {
             let slug = Gimmea.slug('Thing', 10);
