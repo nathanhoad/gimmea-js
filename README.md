@@ -1,5 +1,7 @@
 # Gimmea - Give Me A
 
+[![CircleCI](https://circleci.com/gh/nathanhoad/gimmea-js.svg?style=svg)](https://circleci.com/gh/nathanhoad/gimmea-js)
+
 A set of quick value generation tools.
 
 
