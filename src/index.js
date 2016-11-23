@@ -1,5 +1,5 @@
 const Crypto = require('crypto');
-const UUID = require('node-uuid');
+const UUID = require('uuid');
 
 
 const Gimmea = {
