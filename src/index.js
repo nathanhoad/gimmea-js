@@ -10,6 +10,7 @@ const Gimmea = {
     
     
     hash (seed, length) {
+        seed = seed || Math.random();
         length = length || 64;
         
         return Crypto.createHash("sha256").update(seed.toString(), "utf8").digest("hex").substring(0, length);
@@ -21,7 +22,7 @@ const Gimmea = {
         
         var slug = string.toLowerCase().replace(/[\'\!\"\&\%]/g, '').replace(/[^a-z0-9]/g, '-').replace(/\-+/g, '-').replace(/(^\-|\-$)/, '');
         if (hash_size > 0) {
-            slug += '-' + Gimmea.hash(Math.random().toString(), hash_size);
+            slug += '-' + Gimmea.hash(null, hash_size);
         }
         
         return slug;
