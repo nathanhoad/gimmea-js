@@ -1,6 +1,5 @@
 const Crypto = require('crypto');
 const UUID = require('uuid');
-const BCrypt = require('bcrypt');
 
 
 const Gimmea = {
@@ -15,16 +14,6 @@ const Gimmea = {
         length = length || 64;
         
         return Crypto.createHash("sha256").update(seed.toString(), "utf8").digest("hex").substring(0, length);
-    },
-    
-    
-    encryptedPassword (password) {
-        return BCrypt.hash(password, 10);
-    },
-    
-    
-    checkPassword (password, encrypted_password) {
-        return BCrypt.compare(password, encrypted_password);
     },
     
     

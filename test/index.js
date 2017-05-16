@@ -33,24 +33,6 @@ describe('Gimmea', () => {
     });
     
     
-    describe('#password', () => {
-        it('generates an encrypted password', done => {
-            let password = 'password';
-            
-            Gimmea.encryptedPassword(password).then(encrypted_password => {
-                Gimmea.checkPassword(password, encrypted_password).then(result => {
-                    result.should.be.true();
-                    
-                    Gimmea.checkPassword('some other password', encrypted_password).then(result => {
-                        result.should.be.false();
-                        done();
-                    });
-                });
-            });
-        });
-    });
-    
-    
     describe('#slug', () => {
         it('slugifies a string', (done) => {
             let slug = Gimmea.slug('This is the Title!');
