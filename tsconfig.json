@@ -1,0 +1,8 @@
+{
+  "exclude": ["test", "lib"],
+  "compilerOptions": {
+    "outDir": "lib",
+    "esModuleInterop": true,
+    "declaration": true
+  }
+}

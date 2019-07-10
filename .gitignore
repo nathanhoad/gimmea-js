@@ -1,5 +1,6 @@
 # OS junk
 .DS_Store
+Thumbs.db
 
 # Node junk
 node_modules
